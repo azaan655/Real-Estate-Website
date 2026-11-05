@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="output">Running...</div>
+  <script>
+    fetch('/test_script.js')
+      .then(res => res.text())
+      .then(code => {
+        try {
+          Babel.transform(code, { presets: ['react'] });
+          document.getElementById('output').innerText = 'TRANSFORM_SUCCESS';
+        } catch (err) {
+          document.getElementById('output').innerText = 'TRANSFORM_ERROR: ' + err.message + '\n' + (err.loc ? JSON.stringify(err.loc) : '');
+        }
+      })
+      .catch(e => {
+        document.getElementById('output').innerText = 'FETCH_ERROR: ' + e.message;
+      });
+  </script>
+</body>
+</html>
