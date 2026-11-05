@@ -1,23 +1,21 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { Plus, ArrowLeft, ArrowRight, ArrowUpRight, Check } from 'lucide-react';
+import { Plus, ArrowLeft, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { getRentPageConfig, RentPageConfig } from '../data/rentPages';
+import { getRentPageConfig } from '../data/rentPages';
 import {
   RENT_TAXONOMY_GROUPS,
-  getRentalsForSlug,
   getRentalsWithFallback,
-  countForRent,
 } from '../data/rentTaxonomy';
-import { Rental, formatRentMonthly } from '../data/rentals';
+import { Rental } from '../data/rentals';
 import SearchBar from '../components/SearchBar';
 import RentCard from '../components/RentCard';
 import CategoryModules from '../components/CategoryModules';
 import RentDetail from '../components/RentDetail';
 import { TransitionLink, usePageTransition } from '../components/PageTransition';
 import NotFound from './NotFound';
-import { RUPEE, DOT, formatInr } from '../lib/money';
+import { RUPEE, formatInr } from '../lib/money';
 
 gsap.registerPlugin(ScrollTrigger);
 

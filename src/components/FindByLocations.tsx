@@ -236,7 +236,7 @@ export const FindByLocations: React.FC = () => {
 
     // GSAP Flip animation if Flip is available, otherwise crossfade
     const flipPlugin = typeof window !== 'undefined' ? (window as any).Flip : null;
-    if (flipPlugin && gsap.plugins?.flip) {
+    if (flipPlugin && 'flip' in gsap.plugins) {
       const cardEls = sectionEl.querySelectorAll('.location-card');
       const state = flipPlugin.getState(cardEls);
 

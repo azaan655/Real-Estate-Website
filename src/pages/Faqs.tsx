@@ -8,8 +8,6 @@ import {
   ThumbsUp,
   ThumbsDown,
   ArrowUpRight,
-  Phone,
-  Mail,
   MessageCircle,
   Home,
   Key,

@@ -1,4 +1,4 @@
-export {
+export type {
   RentalType,
   RentalFurnishing,
   RentalTenant,
@@ -6,6 +6,9 @@ export {
   BhkBucketRent,
   RentalKeyDetail,
   Rental,
+} from '../data/rentals';
+
+export {
   rentBucket,
   bhkBucketRent,
   deposit,

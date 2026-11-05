@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Check, ArrowRight, ArrowLeft, MessageCircle, Sparkles, Building2, Home, TreePine, Store, Briefcase } from 'lucide-react';
+import { Check, ArrowRight, ArrowLeft, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { TransitionLink, usePageTransition } from '../components/PageTransition';
-import { RUPEE, DOT, formatInr } from '../lib/money';
+import { RUPEE, formatInr } from '../lib/money';
 
 const WHATSAPP_NUMBER = '91XXXXXXXXXX';
 

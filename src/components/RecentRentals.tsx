@@ -18,10 +18,10 @@ import {
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { rentals, Rental, rentalViews, RentalView } from '../data/rentals';
+import { rentals, Rental, rentalViews } from '../data/rentals';
 import { RUPEE, DOT, formatInr } from '../lib/money';
 import { RentDetail } from './RentDetail';
-import { TransitionLink, usePageTransition } from './PageTransition';
+import { TransitionLink } from './PageTransition';
 import { CONTACT_PHONE, CONTACT_EMAIL, WHATSAPP_NUMBER } from '../data/services';
 
 if (typeof ScrollTrigger !== 'undefined' && ScrollTrigger && typeof gsap !== 'undefined') {
@@ -56,7 +56,7 @@ const RentalCard: React.FC<RentalCardProps> = ({
 }) => {
   const views = useMemo(() => rentalViews(rental), [rental]);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [prevSlideLabel, setPrevSlideLabel] = useState(views[0]?.label || '');
+  const [, setPrevSlideLabel] = useState(views[0]?.label || '');
   const [currSlideLabel, setCurrSlideLabel] = useState(views[0]?.label || '');
   const [isSaved, setIsSaved] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -69,7 +69,7 @@ const RentalCard: React.FC<RentalCardProps> = ({
   const labelRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const kenBurnsTween = useRef<gsap.core.Tween | null>(null);
 
   const SLIDE_MS = 2000;

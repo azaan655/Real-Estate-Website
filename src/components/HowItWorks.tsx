@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HOW_TABS, HowStep, HowTab } from '../data/howItWorks';
+import { HOW_TABS } from '../data/howItWorks';
 import { CONTACT_EMAIL } from '../data/services';
 import { TransitionLink } from './PageTransition';
 

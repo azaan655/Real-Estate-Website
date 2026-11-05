@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import gsap from 'gsap';
 import { properties, Property } from '../data/properties';
 import { BUY_TAXONOMY_GROUPS, countFor } from '../data/buyTaxonomy';
 import SearchBar from '../components/SearchBar';

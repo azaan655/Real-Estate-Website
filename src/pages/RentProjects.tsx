@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight, Building2, MapPin } from 'lucide-react';
-import gsap from 'gsap';
-import { rentalProjects, RentalProject, unitsFor, rentRange } from '../data/rentalProjects';
-import { rentals } from '../data/rentals';
+import { ArrowUpRight } from 'lucide-react';
+import { rentalProjects, unitsFor, rentRange } from '../data/rentalProjects';
 import SearchBar from '../components/SearchBar';
 import { TransitionLink, usePageTransition } from '../components/PageTransition';
-import { RUPEE, DOT, formatInr } from '../lib/money';
+import { RUPEE, formatInr } from '../lib/money';
 
 export const RentProjects: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
-  const { isTransitioning, transitionTo } = usePageTransition();
+  const { transitionTo } = usePageTransition();
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -122,7 +118,7 @@ export const RentProjects: React.FC = () => {
           <div className="space-y-12">
             {rentalProjects.map((project, idx) => {
               const units = unitsFor(project);
-              const [minR, maxR] = rentRange(project);
+              const [minR] = rentRange(project);
               const isEven = idx % 2 === 0;
 
               // Distinct types available in project

@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
   const buyTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const rentTimelineRef = useRef<gsap.core.Timeline | null>(null);
 
-  const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const linksContainerRef = useRef<HTMLDivElement>(null);
