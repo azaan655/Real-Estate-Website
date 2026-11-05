@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Plus, ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { getBuyPageConfig, BuyPageConfig } from '../data/buyPages';
+import { getBuyPageConfig } from '../data/buyPages';
 import {
   BUY_TAXONOMY_GROUPS,
-  getPropertiesForSlug,
   getPropertiesWithFallback,
   countFor,
 } from '../data/buyTaxonomy';

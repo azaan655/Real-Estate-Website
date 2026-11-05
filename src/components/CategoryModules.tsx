@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Calculator, ArrowRight, Shield, Award, Sparkles, Building, UserCheck } from 'lucide-react';
+import { Check, Sparkles, UserCheck } from 'lucide-react';
 import { Module, BuyPageTheme } from '../data/buyPages';
 import { Property, formatPrice, pricePerUnit } from '../data/properties';
 import { RUPEE, formatInr } from '../lib/money';
@@ -419,7 +419,7 @@ const YieldEstimator: React.FC<{ theme: BuyPageTheme }> = ({ theme }) => {
 // =========================================================================
 // SUB-MODULE: PLOT TOOLS (CONVERTER & TOTAL COST)
 // =========================================================================
-const PlotTools: React.FC<{ theme: BuyPageTheme }> = ({ theme }) => {
+const PlotTools: React.FC<{ theme: BuyPageTheme }> = () => {
   const [sqYd, setSqYd] = useState(267);
   const [ratePerSqYd, setRatePerSqYd] = useState(14232);
 
@@ -485,7 +485,6 @@ const PlotTools: React.FC<{ theme: BuyPageTheme }> = ({ theme }) => {
 // =========================================================================
 const CompareTable: React.FC<{ properties: Property[]; theme: BuyPageTheme }> = ({
   properties,
-  theme,
 }) => {
   if (properties.length === 0) return null;
 

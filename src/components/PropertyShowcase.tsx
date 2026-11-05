@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Bookmark, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
-import { properties, Property, formatPrice, pricePerUnit } from '../data/properties';
+import { properties, Property, formatPrice } from '../data/properties';
 import PropertyDetail from './PropertyDetail';
 
 const EXPAND_DURATION = 0.88;
@@ -31,7 +31,7 @@ export const PropertyShowcase: React.FC = () => {
   const viewPropertyBtnRef = useRef<HTMLButtonElement>(null);
 
   const isAnimating = useRef(false);
-  const autoplayTimer = useRef<NodeJS.Timeout | null>(null);
+  const autoplayTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const isHoveredOrFocused = useRef(false);
   const isIntersecting = useRef(true);
   const touchStartX = useRef<number | null>(null);

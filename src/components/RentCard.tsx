@@ -8,9 +8,9 @@ import {
   Heart,
   ArrowUpRight,
 } from 'lucide-react';
-import { Rental, getKeyDetails, deposit, formatRentMonthly } from '../data/rentals';
+import { Rental, getKeyDetails, deposit } from '../data/rentals';
 import { BuyPageTheme, MotionVariant } from '../data/buyPages';
-import { RUPEE, DOT, formatInr } from '../lib/money';
+import { RUPEE, formatInr } from '../lib/money';
 
 interface RentCardProps {
   rental: Rental;

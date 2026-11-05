@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Check, ArrowUpRight, ShieldCheck, Sparkles, FileText } from 'lucide-react';
-import { rentals, Rental, rentBucket, bhkBucketRent } from '../data/rentals';
+import { Check, ArrowUpRight, FileText } from 'lucide-react';
+import { rentals, Rental } from '../data/rentals';
 import { RENT_TAXONOMY_GROUPS, countForRent } from '../data/rentTaxonomy';
 import { getRentPageConfig } from '../data/rentPages';
 import SearchBar from '../components/SearchBar';
@@ -9,7 +9,6 @@ import RentCard from '../components/RentCard';
 import RentDetail from '../components/RentDetail';
 import CategoryModules from '../components/CategoryModules';
 import { TransitionLink } from '../components/PageTransition';
-import { RUPEE, DOT, formatInr } from '../lib/money';
 
 export const Rent: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();

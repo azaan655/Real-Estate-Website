@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import SiteFooter from '../components/SiteFooter';
 import { TransitionLink } from '../components/PageTransition';
-import { BRAND_NAME, CONTACT_PHONE, CONTACT_EMAIL, ADDRESS_LINES } from '../data/siteInfo';
+import { BRAND_NAME, CONTACT_EMAIL, ADDRESS_LINES } from '../data/siteInfo';
 
 export const Terms: React.FC = () => {
   useEffect(() => {

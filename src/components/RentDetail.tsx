@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Check, MessageCircle, Calendar, ShieldCheck, Heart } from 'lucide-react';
+import { X, Check, MessageCircle, ShieldCheck } from 'lucide-react';
 import gsap from 'gsap';
-import { Rental, deposit, moveInCost, rentalViews, RentalView } from '../data/rentals';
-import { RUPEE, DOT, formatInr } from '../lib/money';
+import { Rental, deposit, moveInCost, rentalViews } from '../data/rentals';
+import { RUPEE, formatInr } from '../lib/money';
 
 const WHATSAPP_NUMBER = '91XXXXXXXXXX';
 
@@ -183,8 +183,6 @@ export const RentDetail: React.FC<RentDetailProps> = ({
 
   const depositAmount = deposit(rental);
   const totalSigningCost = moveInCost(rental);
-  const maintenanceText =
-    rental.maintenance === 0 ? 'Included' : `${RUPEE}${formatInr(rental.maintenance)} / mo`;
 
   // Move-in cost stacked bar percentages
   const rentPct = Math.round((rental.rent / totalSigningCost) * 100);

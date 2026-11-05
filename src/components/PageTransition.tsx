@@ -5,12 +5,14 @@ import gsap from 'gsap';
 interface PageTransitionContextType {
   transitionTo: (to: string, label?: string) => void;
   isTransitioning: boolean;
+  ready: boolean;
   curtainLabel: string | null;
 }
 
 const PageTransitionContext = createContext<PageTransitionContextType>({
   transitionTo: () => {},
   isTransitioning: false,
+  ready: true,
   curtainLabel: null,
 });
 
@@ -88,7 +90,7 @@ export const PageTransitionProvider: React.FC<{ children: React.ReactNode }> = (
   };
 
   return (
-    <PageTransitionContext.Provider value={{ transitionTo, isTransitioning, curtainLabel }}>
+    <PageTransitionContext.Provider value={{ transitionTo, isTransitioning, ready: !isTransitioning, curtainLabel }}>
       {children}
       {/* Luxury Curtain Transition Overlay */}
       <div

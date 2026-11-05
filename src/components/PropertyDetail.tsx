@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Check, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
-import { Property, formatPrice, pricePerUnit, getKeyDetails } from '../data/properties';
+import { Property, formatPrice, pricePerUnit } from '../data/properties';
 
 const WHATSAPP_NUMBER = "91XXXXXXXXXX";
 

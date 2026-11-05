@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, SlidersHorizontal, ArrowRight } from 'lucide-react';
+import { Search, X, SlidersHorizontal } from 'lucide-react';
 import { TransitionLink } from './PageTransition';
 import { RUPEE, DOT } from '../lib/money';
 
